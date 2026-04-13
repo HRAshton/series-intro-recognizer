@@ -56,7 +56,7 @@ def _find_best_offset(offsets: list[float], cfg: Config) -> float:
     if len(non_nan_offsets) == 0:
         return math.nan
 
-    if np.allclose(non_nan_offsets, non_nan_offsets[0], atol=cfg.precision_secs / 2):
+    if np.allclose(non_nan_offsets, non_nan_offsets[0], atol=cfg.precision_secs / 2, rtol=0):
         return non_nan_offsets[0]
 
     return _kmeans_clustering(non_nan_offsets)
