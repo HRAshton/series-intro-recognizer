@@ -113,3 +113,45 @@ recognised = recognise_from_audio_files(files, cfg)
 # Returns a list of intervals
 # [(start=0, end=28.25), (start=0, end=28.20), ...]
 ```
+
+## Development & Contributing
+
+### Quality Standards
+
+The project enforces strict code quality checks:
+
+- **Type Checking**: All code must pass `mypy` in strict mode with 100% type coverage
+- **Test Coverage**: Minimum 80% test coverage is required (enforced in CI/CD)
+- **Unit Tests**: All new features must include unit tests
+- **Code Style**: Code must pass ruff linting checks
+
+### Running Tests Locally
+
+```bash
+# Run all tests with coverage report
+pytest --cov=series_intro_recognizer --cov-report=html tests/
+```
+
+```bash
+# Run type checking
+mypy --strict series_intro_recognizer tests
+```
+
+### Coverage Reports
+
+Coverage reports are automatically generated and commented on pull requests. The project maintains an 80% minimum coverage threshold. Coverage reports can be:
+
+- Viewed in CI/CD workflow runs
+- Downloaded from codecov
+- Generated locally using `pytest --cov=series_intro_recognizer --cov-report=html tests/`
+
+### Pull Request Requirements
+
+All pull requests must:
+
+1. Pass all automated checks (tests, type checking, linting)
+2. Maintain or improve the current test coverage (minimum 80%)
+3. Include type hints for all new functions/methods
+4. Have meaningful commit messages
+
+
