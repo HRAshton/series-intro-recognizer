@@ -3,6 +3,7 @@
 correlations/
 offsets/
 tests/manual/audio_files/*
+series_intro_recognizer/_version.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
