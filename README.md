@@ -1,4 +1,4 @@
-# SeriesIntroRecognizer
+# Series Intro Recognizer
 
 Detailed documentation is available at [Wiki](https://github.com/HRAshton/series-intro-recognizer/wiki).
 
