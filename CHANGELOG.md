@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+### Details
+
+#### Migrated repository links to `HRAshton/series-intro-recognizer`.
+
+Project metadata and README links now point to the new GitHub repository.
+
 ## 1.0.2
 
 This is a formal release. No changes were made.

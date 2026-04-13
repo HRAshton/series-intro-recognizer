@@ -1,6 +1,6 @@
 # SeriesIntroRecognizer
 
-Detailed documentation is available at [Wiki](https://github.com/HRAshton/SeriesIntroRecognizer/wiki/SeriesIntroRecognizer-%E2%80%90-Wiki).
+Detailed documentation is available at [Wiki](https://github.com/HRAshton/series-intro-recognizer/wiki).
 
 Comparing episodes of a series to find the opening/endings of the series.
 
@@ -17,7 +17,7 @@ the [Cupy installation guide](https://docs.cupy.dev/en/stable/install.html)
 to install the correct version for your system.
 
 ```bash
-pip install series_intro_recognizer
+pip install series-intro-recognizer
 ```
 
 ## Options
@@ -153,5 +153,4 @@ All pull requests must:
 2. Maintain or improve the current test coverage (minimum 80%)
 3. Include type hints for all new functions/methods
 4. Have meaningful commit messages
-
 

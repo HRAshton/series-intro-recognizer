@@ -31,9 +31,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/HRAshton/SeriesIntroRecognizer"
-Documentation = "https://github.com/HRAshton/SeriesIntroRecognizer/wiki/SeriesIntroRecognizer-%E2%80%90-Wiki"
-Issues = "https://github.com/HRAshton/SeriesIntroRecognizer/issues"
+Homepage = "https://github.com/HRAshton/series-intro-recognizer"
+Documentation = "https://github.com/HRAshton/series-intro-recognizer/wiki"
+Issues = "https://github.com/HRAshton/series-intro-recognizer/issues"
 
 [tool.setuptools.package-data]
 "pkgname" = ["py.typed"]
