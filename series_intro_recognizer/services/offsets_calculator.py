@@ -13,7 +13,11 @@ def _get_threshold(corr_values: GpuFloatArray) -> GpuFloat | None:
     filtered = corr_values[corr_values < max_limit]
 
     if filtered.shape[0] == 0:
-        logger.warning('Fragments are the same. Skipping. Try to increase the samples length.')
+        logger.debug('All correlations are above the maximum limit')
+        return None
+
+    if cp.mean(filtered) < cp.median(filtered) * 2:
+        logger.debug('The mean of the correlations is not significantly higher than the median')
         return None
 
     return cp.max(filtered) / 2
@@ -74,8 +78,14 @@ def _longest_sequence_with_gaps(arr: GpuFloatArray, max_gap_length: int) -> tupl
 
 
 def find_offsets(corr_values: GpuFloatArray, cfg: Config) -> tuple[int, int] | None:
+    too_close = cp.allclose(corr_values, corr_values[0], rtol=cfg.offset_searcher_similarity_too_close_coeff)
+    if too_close:
+        logger.warning(f'The found correlations are too close to each other. Skipping.')
+        return None
+
     threshold = _get_threshold(corr_values)
     if threshold is None:
+        logger.warning('Could not determine a valid threshold for correlations. Skipping.')
         return None
 
     bools = cp.asarray(corr_values > threshold)

@@ -33,6 +33,8 @@ class Config:
         series_window (int): Number of sequential audio samples to be matched.
         offset_searcher_sequential_secs (int): Number of sequential 'non-intro'
             seconds that signal the end of the intro.
+        offset_searcher_similarity_too_close_coeff (float): Coefficient for determining
+            if correlations are too close and should be skipped.
         adjustment_threshold (bool): Whether to adjust the intro borders.
         adjustment_threshold_secs (float): Threshold for border adjustment.
         save_intermediate_results (bool): Whether to save correlation results.
@@ -54,6 +56,7 @@ class Config:
     series_window: int = 5  # Number of sequential audio samples to be matched
 
     offset_searcher_sequential_secs: int = 30  # 'Non-intro' seconds that signal the end of the intro
+    offset_searcher_similarity_too_close_coeff: float = 1e-3  # Coefficient for determining if audios are the same
 
     adjustment_threshold: bool = True  # Whether to adjust intro borders
     adjustment_threshold_secs: float = 3.0  # Threshold for border adjustment
