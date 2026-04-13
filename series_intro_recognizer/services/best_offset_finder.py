@@ -17,6 +17,7 @@ def _fit_k(data: np.ndarray[Any, np.dtype[np.float64]]) -> int:
         kmeans = KMeans(n_clusters=k, random_state=0).fit(data)
         labels = kmeans.labels_
         if len(set(labels)) == 1:
+            # silhouette_score requires at least two distinct cluster labels
             continue
 
         score = silhouette_score(data, labels, random_state=0)
