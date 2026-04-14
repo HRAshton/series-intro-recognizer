@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   test-and-check:
-    runs-on: gpu
+    runs-on: cuda
     steps:
       - uses: actions/checkout@v4
 
