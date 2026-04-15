@@ -84,7 +84,7 @@ def find_offsets(corr_values: GpuFloatArray, cfg: Config) -> tuple[int, int] | N
 
     too_close = cp.allclose(corr_values, corr_values[0], rtol=cfg.offset_searcher_similarity_too_close_coeff)
     if too_close:
-        logger.warning(f'The found correlations are too close to each other. Skipping.')
+        logger.warning('The found correlations are too close to each other. Skipping.')
         return None
 
     threshold = _get_threshold(corr_values)
