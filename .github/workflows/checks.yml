@@ -28,7 +28,7 @@ jobs:
         run: mypy --strict series_intro_recognizer tests
 
       - name: Run tests with coverage
-        run: pytest --cov=series_intro_recognizer --cov-report=xml --cov-report=html tests/
+        run: pytest
 
       - name: Upload coverage reports
         uses: codecov/codecov-action@v4

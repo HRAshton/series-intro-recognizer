@@ -40,6 +40,14 @@ Issues = "https://github.com/HRAshton/series-intro-recognizer/issues"
 [tool.setuptools_scm]
 version_file = "series_intro_recognizer/_version.py"
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = [
+    "--cov=series_intro_recognizer",
+    "--cov-report=xml",
+    "--cov-report=html",
+]
+
 [tool.mypy]
 python_version = "3.12"
 warn_return_any = true
