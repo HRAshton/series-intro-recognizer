@@ -1,4 +1,4 @@
-FROM nvidia/cuda:12.4.1-devel-ubuntu22.04
+FROM nvidia/cuda:13.2.0-devel-ubuntu22.04@sha256:46a7128f65491ae6ed6e3a4ef31fc140a4ca77d5dddb68a4350fea9d53a95c5f
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG RUNNER_VERSION=2.333.1
