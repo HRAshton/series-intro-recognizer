@@ -39,6 +39,7 @@ Issues = "https://github.com/HRAshton/series-intro-recognizer/issues"
 
 [tool.setuptools_scm]
 version_file = "series_intro_recognizer/_version.py"
+local_scheme = "no-local-version"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
