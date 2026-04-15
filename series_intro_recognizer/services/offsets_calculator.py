@@ -78,6 +78,10 @@ def _longest_sequence_with_gaps(arr: GpuFloatArray, max_gap_length: int) -> tupl
 
 
 def find_offsets(corr_values: GpuFloatArray, cfg: Config) -> tuple[int, int] | None:
+    if corr_values.size == 0:
+        logger.warning('No correlation values provided. Skipping.')
+        return None
+
     too_close = cp.allclose(corr_values, corr_values[0], rtol=cfg.offset_searcher_similarity_too_close_coeff)
     if too_close:
         logger.warning(f'The found correlations are too close to each other. Skipping.')
