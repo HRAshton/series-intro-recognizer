@@ -1,0 +1,3 @@
+# Normalise all text files to LF in the repository and in every checkout.
+# This prevents CRLF from silently breaking shell scripts on Linux/macOS.
+* text=auto eol=lf
