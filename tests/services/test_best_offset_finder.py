@@ -42,6 +42,14 @@ testdata: list[tuple[list[tuple[float, float]], tuple[float, float]]] = [
     (
         [(236.5, 281.0), (math.nan, math.nan), (math.nan, math.nan), (math.nan, math.nan)],
         (236.5, 281.0)
+    ),
+    (
+        [],
+        (math.nan, math.nan)
+    ),
+    (
+        [(math.nan, math.nan)],
+        (math.nan, math.nan)
     )
 ]
 
@@ -55,3 +63,13 @@ def test_calculates_correct(offsets: list[tuple[float, float]], expected: tuple[
     result = find_best_offset(intervals, cfg)
 
     assert result == expected_interval
+
+
+def test_too_few_clusters() -> None:
+    cfg = Config()
+    cfg.precision_secs = 1e-15
+    values = [1.0, 1.0 - 1e-6, 1.0 + 1e-6]
+
+    result = find_best_offset([Interval(value, value) for value in values], cfg)
+
+    assert result == Interval(1.0 + 1/2 * 1e-6, 1.0 + 1/2 * 1e-6)
