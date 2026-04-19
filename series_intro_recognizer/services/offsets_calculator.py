@@ -16,10 +16,6 @@ def _get_threshold(corr_values: GpuFloatArray) -> GpuFloat | None:
         logger.debug('All correlations are above the maximum limit')
         return None
 
-    if cp.mean(filtered) < cp.median(filtered) * 2:
-        logger.debug('The mean of the correlations is not significantly higher than the median')
-        return None
-
     return cp.max(filtered) / 2
 
 

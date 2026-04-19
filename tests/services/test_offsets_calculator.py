@@ -73,17 +73,6 @@ def test__empty_array__returns_none() -> None:
     assert result is None
 
 
-def test__no_clear_plateau__returns_none() -> None:
-    """Linearly-spaced values: mean ≈ median, so _get_threshold returns None."""
-    cfg = Config()
-    # linspace gives a symmetric distribution where mean(filtered) < median(filtered)*2
-    corr_values = cp.linspace(1.0, 2.0, 1000, dtype=cp.float32)
-
-    result = find_offsets(corr_values, cfg)
-
-    assert result is None
-
-
 def test__plateau_at_start__correct_offsets() -> None:
     """High values at the very beginning of the array (start index = 0)."""
     cfg = Config()

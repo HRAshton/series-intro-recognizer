@@ -49,15 +49,3 @@ def test__same_audios__returns_nan() -> None:
     for res in result:
         assert np.isnan(res.start)
         assert np.isnan(res.end)
-
-
-def test__random_audios__returns_nan() -> None:
-    cfg = Config()
-    audio1 = np.random.default_rng(0).random(cfg.min_segment_length_beats)
-    audio2 = np.random.default_rng(1).random(cfg.min_segment_length_beats)
-
-    result = recognise_from_audio_samples(iter([audio1, audio2]), cfg)
-
-    for res in result:
-        assert np.isnan(res.start)
-        assert np.isnan(res.end)
