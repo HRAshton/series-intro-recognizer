@@ -13,7 +13,7 @@ def test_recognise_from_audio_files() -> None:
     :return:
     """
     cfg = Config()
-    files = [(f'{__file__}/../audio_files/{i}.wav', None, None) for i in range(1, 8)]
+    files = [(f'{__file__}/../audio_files/op_{i}.wav', None, None) for i in range(1, 5)]
     recognised = list(recognise_from_audio_files_with_offsets(iter(files), cfg))
 
     rows: list[tuple[str, float, float, float]] = []
