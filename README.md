@@ -154,3 +154,7 @@ All pull requests must:
 3. Include type hints for all new functions/methods
 4. Have meaningful commit messages
 
+## GPU CI runner
+
+See [the GPU runner guide](scripts/runner/README.md) for Podman setup,
+restarting after reboot, and registration or image updates.
