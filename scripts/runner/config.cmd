@@ -45,7 +45,7 @@ if errorlevel 1 (
     echo Removed existing container %runnerName%
 )
 
-echo Running container %runnerName% with image %imageName%. URL: %url%; Token: %token%
+echo Starting runner container
 podman run ^
     -d ^
     --name %runnerName% ^
@@ -53,6 +53,8 @@ podman run ^
     -e RUNNER_NAME=%runnerName% ^
     -e GITHUB_URL=%url% ^
     -e GITHUB_TOKEN=%token% ^
+    --restart=unless-stopped ^
+    -v sir-github-runner-data:/home/runner/actions-runner ^
     -v %CD%/entrypoint.sh:/entrypoint.sh ^
     %imageName% ^
     /entrypoint.sh
