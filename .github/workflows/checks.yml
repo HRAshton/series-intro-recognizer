@@ -33,7 +33,7 @@ jobs:
       - name: Run tests with coverage
         run: pytest
 
-build-package:
+  build-package:
     name: Build distribution (Python 3.15)
     runs-on: ubuntu-latest
     steps:
