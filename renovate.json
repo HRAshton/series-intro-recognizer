@@ -5,7 +5,9 @@
     "group:all",
     "schedule:earlyMondays"
   ],
-  "dependencyDashboard": true,
+  "dependencyDashboard": {
+    "enabled": true
+  },
   "prHourlyLimit": 2,
   "prConcurrentLimit": 1,
   "automerge": true,
